@@ -7,7 +7,7 @@ zsignjs is a JavaScript wrapper for the zsign binary, which allows you to sign i
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/zsignjs.git
+git clone https://github.com/selenic-io/zsign.js.git
 ```
 
 2. Install the necessary dependencies:
