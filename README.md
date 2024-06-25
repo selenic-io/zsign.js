@@ -17,16 +17,8 @@ The Windows binaries might be unstable. They passed ipa sign tests, but success 
 
 ## Installation
 
-1. Clone the repository:
-
 ```bash
-git clone https://github.com/selenic-io/zsign.js.git
-```
-
-2. Install the necessary dependencies:
-
-```bash
-npm install
+npm i https://github.com/selenic-io/zsign.js
 ```
 
 ## Usage
