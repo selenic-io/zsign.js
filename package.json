@@ -1,0 +1,26 @@
+{
+  "name": "zsignjs",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "NodeJS wrapper for zsign",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selenic-io/zsign.js.git"
+  },
+  "keywords": [
+    "zsign",
+    "ipa-sign",
+    "ipa-signer",
+    "codesign"
+  ],
+  "author": "selenic-io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selenic-io/zsign.js/issues"
+  },
+  "homepage": "https://github.com/selenic-io/zsign.js#readme"
+}
