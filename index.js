@@ -1,12 +1,17 @@
 import { exec } from 'child_process'
 import { arch, type } from 'os'
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs'
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 // funny debug variable
 let debug = false;
 
+let isWin = false;
+
 // Get os type & arch to find out which binary to use.
-let bin = "./bin/zsign_"
+const __dirname = path.dirname(fileURLToPath(import.meta.url)); // Get dir containing our ./bin/ folder
+let bin = __dirname + "/bin/zsign_"
 
 switch (type()) {
     case "Linux":
@@ -17,6 +22,7 @@ switch (type()) {
         break;
     case "Windows_NT" || "Windows":
         bin += "win_"
+        isWin = true
         break;
     default:
         throw new Error("OS Type not supported: We don't have a binary for zsign for your OS.")
@@ -32,6 +38,8 @@ switch (arch()) {
     default:
         throw new Error("Arch not supported: We don't have a binary for zsign for your arch.")
 }
+
+if(isWin) bin += ".exe" // Add exe extention when on windows.
 
 // If we don't have a binary for the current os/arch combination, throw an error.
 if(!existsSync(bin)) throw new Error("Binary not found: We don't have a binary for zsign for your OS/arch combination.")
@@ -114,31 +122,3 @@ export const zsign = {
         runCommand(args, callback);
     }
 }
-
-/* Example usage
-
-Sign testIpa.ipa with mobileprovision, p12 cert, and password - and output it as signed.ipa
-zsign.sign("./testIpa.ipa", {
-    pkey: "./test.p12",
-    prov: "./test.mobileprovision",
-    password: "test",
-    zip_level: 9,
-    output: './signed.ipa'
-}, (error, result) => {
-    if (error) {
-        console.error("Error:", error)
-    } else {
-        console.log(result)
-    }
-})
-
-Print version info :)
-zsign.getVersion((error, result) => {
-    if (error) {
-        console.error('Error:', error);
-    } else {
-        let zsignVersion = result.split(" ")[1].trim()
-        console.log('v:', zsignVersion);
-    }
-})
-    */
