@@ -15,8 +15,9 @@ switch (type()) {
     case "Darwin":
         bin += "macos_"
         break;
-    case "Windows":
-        bin += "win_"
+    case "Windows_NT" || "Windows":
+        throw new Error("Windows is not supported yet.")
+        // bin += "win_"
         break;
     default:
         throw new Error("OS Type not supported: We dont have a binary for zsign for your OS.")
