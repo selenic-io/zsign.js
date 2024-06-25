@@ -3,7 +3,7 @@ import { arch, type } from 'os'
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs'
 
 // funny debug variable
-let debug = true;
+let debug = false;
 
 // Get os type & arch to find out which binary to use.
 let bin = "./bin/zsign_"

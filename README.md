@@ -7,7 +7,7 @@ zsignjs is a JavaScript wrapper for the zsign binary, which allows you to sign i
 | Support | OS Type | Arch  |
 | ------- | ------- | ----- |
 | ✅      | MacOS   | arm64 |
-| 🚫      | MacOS   | x64   |
+| ✅      | MacOS   | x64   |
 | 🚫      | Windows | arm64 |
 | ✅      | Windows | x64   |
 | ✅      | Linux   | arm64 |
