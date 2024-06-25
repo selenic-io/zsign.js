@@ -4,14 +4,14 @@ zsignjs is a JavaScript wrapper for the zsign binary, which allows you to sign i
 
 ## Support
 
-| Support  | OS Type | Arch |
-| ------------- | ------------- |
-| ✅ | MacOS | arm64 |
-| 🚫 | MacOS | x64 |
-| 🚫 | Windows | arm64 |
-| 🚫 | Windows | x64 |
-| ✅ | Linux | arm64 |
-| 🚫 | Linux | x64 |
+| Support | OS Type | Arch  |
+| ------- | ------- | ----- |
+| ✅      | MacOS   | arm64 |
+| 🚫      | MacOS   | x64   |
+| 🚫      | Windows | arm64 |
+| 🚫      | Windows | x64   |
+| ✅      | Linux   | arm64 |
+| 🚫      | Linux   | x64   |
 
 More binaries will be included in the future - dont worry :3
 
