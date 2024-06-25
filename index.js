@@ -1,6 +1,6 @@
 import { exec } from 'child_process'
 import { arch, type } from 'os'
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs'
+import { readFileSync, writeFileSync, existsSync, mkdirSync, unlinkSync } from 'fs'
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -39,7 +39,7 @@ switch (arch()) {
         throw new Error("Arch not supported: We don't have a binary for zsign for your arch.")
 }
 
-if(isWin) bin += ".exe" // Add exe extention when on windows.
+if(isWin) bin += ".exe" // Add exe extension when on windows.
 
 // If we don't have a binary for the current os/arch combination, throw an error.
 if(!existsSync(bin)) throw new Error("Binary not found: We don't have a binary for zsign for your OS/arch combination.")
@@ -117,6 +117,14 @@ export const zsign = {
         if (options.weak) args.push('--weak');
         if (options.install) args.push('--install');
         if (options.quiet) args.push('--quiet');
+
+        if(existsSync(options.output)) {
+            if(options.force) {
+                unlinkSync(options.output)
+            } else {
+                throw new Error("Output file already exists, and the force option wasn't used.")
+            }
+        }
 
         args.push(inputPackage)
         runCommand(args, callback);

@@ -4,17 +4,16 @@ zsignjs is a JavaScript wrapper for the zsign binary, which allows you to sign i
 
 ## Support
 
-| Support | OS Type | Arch  |
-| ------- | ------- | ----- |
-| ✅      | MacOS   | arm64 |
-| ✅      | MacOS   | x64   |
-| 🚫      | Windows | arm64 |
-| ✅      | Windows | x64   |
-| ✅      | Linux   | arm64 |
-| ✅      | Linux   | x64   |
+| Support | OS Type | Arch  | Compiled from     |
+| ------- | ------- | ----- | ----------------- |
+| ✅      | MacOS   | arm64 | zhlynn/zsign      |
+| ✅      | MacOS   | x64   | zhlynn/zsign      |
+| 🚫      | Windows | arm64 | Not Supported Yet |
+| ❓      | Windows | x64   | selenic-io/zsign  |
+| ✅      | Linux   | arm64 | zhlynn/zsign      |
+| ✅      | Linux   | x64   | zhlynn/zsign      |
 
-More binaries will be included in the future - don't worry :3
-
+The Windows binaries might be unstable. They passed ipa sign tests, but success may vary. **Needs 7z in Path**
 
 ## Installation
 
