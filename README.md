@@ -1,6 +1,6 @@
 # zsignjs
 
-zsignjs is a JavaScript wrapper for the zsign binary, which allows you to sign iOS packages (.ipa files) with various signing options. This module determines the correct zsign binary for your operating system and architecture and provides functions to interact with it.
+zsignjs is a JavaScript wrapper for the zsign binary, which allows you to sign iOS packages (.ipa files) with various signing options. This module determines the correct zsign binary for your operating system and architecture and provides functions to interact with it. This means you can sign IPA files inside NodeJS, this could also be used to make an ipa-signing server.
 
 ## Installation
 
