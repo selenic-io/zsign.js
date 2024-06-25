@@ -16,11 +16,10 @@ switch (type()) {
         bin += "macos_"
         break;
     case "Windows_NT" || "Windows":
-        throw new Error("Windows is not supported yet.")
-        // bin += "win_"
+        bin += "win_"
         break;
     default:
-        throw new Error("OS Type not supported: We dont have a binary for zsign for your OS.")
+        throw new Error("OS Type not supported: We don't have a binary for zsign for your OS.")
 }
 
 switch (arch()) {
@@ -31,11 +30,11 @@ switch (arch()) {
         bin += "x64"
         break;
     default:
-        throw new Error("Arch not supported: We dont have a binary for zsign for your arch.")
+        throw new Error("Arch not supported: We don't have a binary for zsign for your arch.")
 }
 
-// If we dont have a binary for the current os/arch combination, throw an error.
-if(!existsSync(bin)) throw new Error("Binary not found: We dont have a binary for zsign for your OS/arch combination.")
+// If we don't have a binary for the current os/arch combination, throw an error.
+if(!existsSync(bin)) throw new Error("Binary not found: We don't have a binary for zsign for your OS/arch combination.")
 
 // Handles running the zsign binary.
 const runCommand = (args, callback) => {
@@ -56,7 +55,7 @@ const runCommand = (args, callback) => {
 // zsign object
 export const zsign = {
     /**
-     * Prints help, Not really useful except for CLI ussage cases.
+     * Prints help, Not really useful except for CLI usage cases.
      * @param {Function} callback 
      */
     showHelp: (callback) => {
